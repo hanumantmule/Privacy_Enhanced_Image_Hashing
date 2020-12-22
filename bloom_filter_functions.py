@@ -1,5 +1,5 @@
+BLOOM_FILTER = [0] * 64
 
-BLOOM_FILTER=[0] * 64
 
 def compute_bloom_filter_index(hex1):
     # print(int(hex1, 16))
