@@ -11,6 +11,7 @@ app.config["DEBUG"] = True
 @app.route("/")
 def hello():
     BF = main_algo_flow()
+    app.config["bf"] = str(BF);
     return render_template('success.html', bf=str(BF))
 
 
@@ -19,7 +20,7 @@ def test():
     if request.method == 'POST':
         selected_test = request.form.get('test_choice')
         result = test_image(selected_test)
-    return str(result)
+    return render_template('success.html', bf=app.config["bf"], result=str(result))
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@ from Read_Images import load_images_from_folder
 from cryptographic_hashing import *
 from Constants import *
 import bloom_filter_functions
-
+import os
 
 def get_folder_name(test_type):
     return folder_mapping_dict[test_type]
@@ -38,12 +38,12 @@ def test_image(test_type):
 
         print(one_count)
         print(zero_count)
-        result = result + " One Count: "
-        result = result + str(one_count)
-        result = result + ", Zero Count: "
-        result = result + str(zero_count)
-        result = result + " ; "
-    return result
-
+        image_name = os.path.basename(image)
+        similarity = one_count/16;
+        status = "reject"
+        if (similarity > 0.5):
+            status = "accept"
+        result = result + str(similarity) +","+image_name + "," + str(one_count) + "," + str(zero_count) + ","+status+";"
+    return result[:-1]
 
 test_image('compressed')

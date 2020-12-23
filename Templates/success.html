@@ -58,6 +58,10 @@
   z-index: 1;
 }
 
+table, td {
+  border: 1px solid black;
+}
+
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -84,8 +88,41 @@
         <option value="color_inverted">Color Inverted Images</option>
         <option value="rotated">Rotated Images</option>
     </select>
-<button class="button button1" type="submit">Submit </button>
+    <button class="button button1" type="submit">Submit </button>
+<!--<p>Result: {{result}}</p>-->
+    <p></p>
+    <h1>Result:</h1>
+    <button class="button button1" type="button" onclick="myFunction()">Show result</button>
+    <table id="myTable">
+  <tr>
+    <td>similarity</td>
+    <td>image name</td>
+    <td>one count</td>
+    <td>zero count</td>
+    <td>accept/reject</td>
+  </tr>
+</table>
 
+<script>
+function myFunction() {
+  var form = document.getElementById("testForm");
+  form.method = "post"
+  form.action = "/test"
+  var result1 = "{{result}}";
+  var rows = result1.split(";");
+  var table = document.getElementById("myTable");
+  var i,j;
+  var cells, row, cell;
+  for (i = 0; i < rows.length; i++) {
+    cells = rows[i].split(",");
+    row = table.insertRow(-1);
+    for (j = 0; j < cells.length; j++){
+        cell = row.insertCell(j);
+        cell.innerHTML = cells[j];
+        }
+  }
+}
+</script>
 </form>
 
 </body>
