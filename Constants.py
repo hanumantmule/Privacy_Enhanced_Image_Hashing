@@ -6,4 +6,5 @@ CRYPTOGRAPHIC_HASH_BLOCKS=2
 CRYPTOGRAPHIC_BLOCK_SIZE=64
 
 folder_mapping_dict = {'compressed': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\compressed",
-                       'train': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\train\\" }
+                       'train': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\train\\",
+                       'scaled' : "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\scaled\\"}

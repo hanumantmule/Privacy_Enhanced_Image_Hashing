@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <style>
 .button {
   border: none;
@@ -88,19 +93,21 @@ table, td {
         <option value="color_inverted">Color Inverted Images</option>
         <option value="rotated">Rotated Images</option>
     </select>
-    <button class="button button1" type="submit">Submit </button>
+    <button class="button button1" type="submit">Run Test </button>
 <!--<p>Result: {{result}}</p>-->
     <p></p>
     <h1>Result:</h1>
     <button class="button button1" type="button" onclick="myFunction()">Show result</button>
-    <table id="myTable">
-  <tr>
-    <td>similarity</td>
-    <td>image name</td>
-    <td>one count</td>
-    <td>zero count</td>
-    <td>accept/reject</td>
-  </tr>
+    <table id="myTable" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Similarity Score</th>
+            <th>Image Name</th>
+            <th>Positive bit count</th>
+            <th>Negative bit count</th>
+            <th>Accept/Reject</th>
+        </tr>
+        </thead>
 </table>
 
 <script>
@@ -110,6 +117,7 @@ function myFunction() {
   form.action = "/test"
   var result1 = "{{result}}";
   var rows = result1.split(";");
+
   var table = document.getElementById("myTable");
   var i,j;
   var cells, row, cell;

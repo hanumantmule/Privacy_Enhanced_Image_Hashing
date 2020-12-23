@@ -10,8 +10,6 @@ def get_folder_name(test_type):
 
 
 def test_image(test_type):
-    robust_hash_blocks = []
-    image_list = []
     folder_name = get_folder_name(test_type)
     image_list = load_images_from_folder(folder_name)
     result = " "
@@ -41,9 +39,9 @@ def test_image(test_type):
         image_name = os.path.basename(image)
         similarity = one_count/16;
         status = "reject"
-        if (similarity > 0.5):
+        if similarity >= 0.5:
             status = "accept"
         result = result + str(similarity) +","+image_name + "," + str(one_count) + "," + str(zero_count) + ","+status+";"
     return result[:-1]
 
-test_image('compressed')
+# test_image('compressed')
