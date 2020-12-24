@@ -37,7 +37,7 @@ def test_image(test_type):
         print(one_count)
         print(zero_count)
         image_name = os.path.basename(image)
-        similarity = one_count/16;
+        similarity = 1 - (zero_count * 0.5 /16);
         status = "reject"
         if similarity >= 0.5:
             status = "accept"
