@@ -5,6 +5,7 @@ from Constants import *
 import bloom_filter_functions
 import os
 
+
 def get_folder_name(test_type):
     return folder_mapping_dict[test_type]
 
@@ -24,7 +25,8 @@ def test_image(test_type):
             crpytographic_hash = compute_cryptographic_hash(hash_block)
             print(crpytographic_hash)
             print("\n-----------\n")
-            crpytographic_hash_blocks = list(Robust_hashing.chunkstring(str(crpytographic_hash), CRYPTOGRAPHIC_BLOCK_SIZE))
+            crpytographic_hash_blocks = list(
+                Robust_hashing.chunkstring(str(crpytographic_hash), CRYPTOGRAPHIC_BLOCK_SIZE))
             print(crpytographic_hash_blocks)
             for crypto_block in crpytographic_hash_blocks:
                 block_index = bloom_filter_functions.compute_bloom_filter_index(crypto_block)
@@ -37,11 +39,12 @@ def test_image(test_type):
         print(one_count)
         print(zero_count)
         image_name = os.path.basename(image)
-        similarity = 1 - (zero_count * 0.5 /16);
+        similarity = 1 - (zero_count * 0.5 / (NUMBER_OF_ROBUST_BLOCKS * CRYPTOGRAPHIC_HASH_BLOCKS));
         status = "reject"
-        if similarity >= 0.5:
+        if similarity >= 0.8:
             status = "accept"
-        result = result + str(similarity) +","+image_name + "," + str(one_count) + "," + str(zero_count) + ","+status+";"
+        result = result + str(similarity) + "," + image_name + "," + str(one_count) + "," + str(
+            zero_count) + "," + status + ";"
     return result[:-1]
 
 # test_image('compressed')

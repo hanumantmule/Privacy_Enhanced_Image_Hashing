@@ -18,7 +18,7 @@ def main_algo_flow():
     for image in image_list:
         robust_hash_blocks = Robust_hashing.compute_robust_hash(image)
         print(robust_hash_blocks)
-
+        count=0
         for hash_block in robust_hash_blocks:
             crpytographic_hash = compute_cryptographic_hash(hash_block)
             print(crpytographic_hash)
@@ -29,7 +29,9 @@ def main_algo_flow():
             for crypto_block in crpytographic_hash_blocks:
                 block_index = bloom_filter_functions.compute_bloom_filter_index(crypto_block)
                 bloom_filter_functions.BLOOM_FILTER[block_index] = 1
+                count=count +1
             print("\n")
+            print("Count:"+str(count))
 
         print(bloom_filter_functions.BLOOM_FILTER)
 
@@ -37,4 +39,4 @@ def main_algo_flow():
     # test_image()
 
 
-# main_algo_flow()
+main_algo_flow()

@@ -12,22 +12,7 @@ app.config["DEBUG"] = True
 def hello():
     BF = main_algo_flow()
     app.config["bf"] = str(BF);
-    items=[
-        {
-            'id':'1',
-            'title': 'hello',
-            'description': 'ok ok',
-            'created_date': '2018-09-09'
-        },
-        {
-            'id':'2',
-            'title': 'hello 2',
-            'description': 'ok ok 2',
-            'created_date': '2018-10-09'
-        }
-    ]
-    columns= [ 'id', 'title', 'description', 'created_date']
-    return render_template('success.html', bf=str(BF), column=columns, rows=items)
+    return render_template('success.html', bf=str(BF))
 
 
 @app.route('/test', methods=['POST'])
