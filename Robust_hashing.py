@@ -28,4 +28,4 @@ def compute_robust_hash(image_name):
     return robust_hash_blocks
 
 
-compute_robust_hash("E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\compressed\\du94v9qtxs54257kt306.jpg")
+# compute_robust_hash("E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\compressed\\du94v9qtxs54257kt306.jpg")

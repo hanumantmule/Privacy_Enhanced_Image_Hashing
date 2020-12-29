@@ -19,8 +19,10 @@ CRYPTOGRAPHIC_BLOCK_SIZE = 16
 
 folder_mapping_dict = {'compressed': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\compressed",
                        'train': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\train\\",
-                       'scaled': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\scaled\\"}
+                       'scaled': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\scaled\\",
+                       'rotated': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\rotated\\"}
 
+SIMILARITY_THRESHOLD=0.825
 
 def find_bloom_filter_size():
     temp_size = NO_OF_TRAINED_IMAGES * 1 * NUMBER_OF_ROBUST_BLOCKS * CRYPTOGRAPHIC_HASH_BLOCKS
@@ -62,7 +64,6 @@ def find_next_prime(temp_size):
     # True for a number greater than n
     while not found:
         prime = prime + 1
-        print(prime)
         if isPrime(prime):
             found = True
 
