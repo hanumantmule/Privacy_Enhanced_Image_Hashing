@@ -9,21 +9,21 @@ def main_algo_flow():
     robust_hash_blocks = []
     image_list = []
     folder_path = folder_mapping_dict['training']
-    print('Selected Folder Path:'+str(folder_path))
+    print('Selected Folder Path:' + str(folder_path))
     image_list = load_images_from_folder(folder_path)
     print('List of images present in the folder:')
     for img in image_list:
         print(img)
     for image in image_list:
-        print('Selected Image:'+str(image))
+        print('Selected Image:' + str(image))
         robust_hash_blocks = Robust_hashing.compute_robust_hash(image)
         count = 0
-        block_counter=1
+        block_counter = 1
         for hash_block in robust_hash_blocks:
-            print('Running for Robust Block #:'+str(block_counter))
-            block_counter = block_counter+1
+            print('Running for Robust Block #:' + str(block_counter) + ' ==> ' + str(hash_block))
+            block_counter = block_counter + 1
             crpytographic_hash = compute_cryptographic_hash(hash_block)
-            print('Cryptographic Hash of Image for robust block : '+ str(crpytographic_hash))
+            print('Cryptographic Hash of Image for robust block : ' + str(crpytographic_hash))
             crpytographic_hash_blocks = list(
                 Robust_hashing.chunkstring(str(crpytographic_hash), CRYPTOGRAPHIC_BLOCK_SIZE))
             # print(crpytographic_hash_blocks)
@@ -37,6 +37,5 @@ def main_algo_flow():
 
     return bloom_filter_functions.BLOOM_FILTER
     # test_image()
-
 
 # main_algo_flow()

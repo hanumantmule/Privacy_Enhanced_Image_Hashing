@@ -19,7 +19,38 @@
   transition-duration: 0.4s;
   cursor: pointer;
 }
-
+.box {
+        width: 200px;
+        height: 40px;
+        border: 1px solid #999;
+        font-size: 18px;
+        color: #1c87c9;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 4px 4px #ccc;
+      }
+      .casename {
+        width: 230px;
+        height: 40px;
+        font-size: 18px;
+        color: #1c87c9;
+        background-color: #fff;
+      }
+      .header1 {
+        width: 400 px;
+        height: 50 px;
+        font-size: 28px;
+        border-radius: 5px;
+        color: #1c88c9;
+        background-color: #fff;
+      }
+      .header2 {
+        width: 300px;
+        height: 40px;
+        font-size: 18px;
+        color: #1c87c9;
+        background-color: #fff;
+      }
 .button1 {
   background-color: white;
   color: black;
@@ -83,11 +114,13 @@ table, td {
 </head>
 <body>
 <form action="/test" name="testForm" id="testForm" method="POST" >
-<h1>Bloom Filter after training</h1>
-
-<p>Bloom Filter: {{bf}}</p>
-    <label for="test_choice">Choose a Test Scenario:</label>
-    <select id="test_choice" name="test_choice" form="testForm">
+</br>
+    <p class="header1" align="center"> Privacy Enhanced Robust Image Hashing </p>
+<h1 class="header2">Bloom Filter content after training</h1>
+<p>{{bf}}</p>
+</br>
+    <label for="test_choice" class="casename">Choose a Test Scenario:</label>
+    <select id="test_choice" name="test_choice" form="testForm"  class="box">
         <option value="compressed">Compressed Images</option>
         <option value="scaled">Scaled Images</option>
         <option value="rotated">Rotated Images</option>
