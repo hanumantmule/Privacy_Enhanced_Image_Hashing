@@ -5,7 +5,7 @@ PHASH_SIZE = 32
 HIGH_FREQ_FACTOR = 16
 
 # no of approx images for training
-NO_OF_TRAINED_IMAGES = 5
+NO_OF_TRAINED_IMAGES = 7
 
 # Robust hashing Parameters
 NUMBER_OF_ROBUST_BLOCKS = 16
@@ -23,7 +23,7 @@ folder_mapping_dict = {'compressed': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Da
                        'rotated': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\rotated\\",
                        'random': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\random\\"}
 
-SIMILARITY_THRESHOLD=0.825
+SIMILARITY_THRESHOLD=0.82
 
 def find_bloom_filter_size():
     temp_size = NO_OF_TRAINED_IMAGES * 1 * NUMBER_OF_ROBUST_BLOCKS * CRYPTOGRAPHIC_HASH_BLOCKS
