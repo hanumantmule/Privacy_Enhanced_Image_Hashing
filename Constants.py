@@ -18,9 +18,10 @@ CRYPTOGRAPHIC_BLOCK_SIZE = 16
 # Training and testing folder data mapping
 
 folder_mapping_dict = {'compressed': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\compressed",
-                       'train': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\train\\",
+                       'training': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\training\\",
                        'scaled': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\scaled\\",
-                       'rotated': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\rotated\\"}
+                       'rotated': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\rotated\\",
+                       'random': "E:\\M.Tech 1 - sem\\Algorithm\\Project\\Dataset\\random\\"}
 
 SIMILARITY_THRESHOLD=0.825
 

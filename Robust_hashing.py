@@ -17,7 +17,7 @@ def chunkstring(string, length):
 def compute_robust_hash(image_name):
     hash_val = imagehash.phash(Image.open(image_name), PHASH_SIZE,
                                HIGH_FREQ_FACTOR)
-    print(hash_val)
+    print('Robust Hash of Image : '+str(hash_val))
     robust_hash_blocks = []
     robust_hash_blocks = list(chunkstring(str(hash_val), ROBUST_BLOCK_SIZE))
     # print(robust_hash_blocks)
