@@ -2,7 +2,7 @@
 
 Consider the situation of the forensic investigation. Whether suspect posseses a illegal images like child pornography etc. Manul analysis of images is impractical and time consuming, also there is no privacy preservation. Common approach is to use cryptographic hash functions, Match the cryptographic hashes of the master images with the suspects computer images. But slight alteration to the image produces entirely different hash value ( Avalanche effect). So we cannot detect the slightly altered images. Another approach is Robust hashing -- Robust hash provides similar hash for similar images. But problem here is leakage of structural information of image. You can predict the structure of the image using robust hash.    combining cryptographic and robust hashes, we can combine the advantages of both robustness and protection against data leakage.  Use bloom filter to store the image hash values. The reasons to use a bloom filter instead of a regular database is that bloom filters are both space and time efficient. 
 
-Bloom Filter Size : (No of Images *number of partitions* number of blocks per partition * number of indices per block)/log2
+### Bloom Filter Size : (No of Images *number of partitions* number of blocks per partition * number of indices per block)/log2
 
 ## Steps to store an Image
 1. A robust hash is obtained using pHash – 256 bit hex generated.
